@@ -10,68 +10,116 @@ import fetch from 'node-fetch';
 const BASE_URL = 'http://localhost:65094/api/'
 
 function getRegionByURL(relativeURL) {
-  return fetch(`${BASE_URL}${relativeURL}`)
-    .then(res => res.json())
+    return fetch(`${BASE_URL}${relativeURL}`)
+        .then(res => res.json())
 }
 
 const CommuneType = new GraphQLObjectType({
-  name: 'Commune',
-  description: '...',
+    name: 'Commune',
+    description: '...',
 
-  fields: () => ({
-    Url: {type: GraphQLString},
-    Description: {type: GraphQLString},
-    Id: {type: GraphQLString},
-    Name: {type: GraphQLString},
-    NameLanguageCode: {type: GraphQLString},
-    LanguageCode1: {type: GraphQLString},
-    LanguageCode2: {type: GraphQLString},
-    NISCommuneCode: {type: GraphQLString}
-  })
+    fields: () => ({
+        url: {
+            type: GraphQLString
+        },
+        description: {
+            type: GraphQLString
+        },
+        id: {
+            type: GraphQLString
+        },
+        name: {
+            type: GraphQLString
+        },
+        nameLanguageCode: {
+            type: GraphQLString
+        },
+        languageCode1: {
+            type: GraphQLString
+        },
+        languageCode2: {
+            type: GraphQLString
+        },
+        nisCommuneCode: {
+            type: GraphQLString
+        }
+    })
 });
 
 const RegionType = new GraphQLObjectType({
-  name: 'Region',
-  description: '...',
+    name: 'Region',
+    description: '...',
 
-  fields: () => ({
-    Url: {type: GraphQLString},
-    Description: {type: GraphQLString},
-    Id: {type: GraphQLString},
-    Name: {type: GraphQLString},
-    NameLanguageCode: {type: GraphQLString},
-    CenterX: {type: GraphQLString},
-    CenterY: {type: GraphQLString},
-    MinimumX: {type: GraphQLString},
-    MinimumY: {type: GraphQLString},
-    MaximumX: {type: GraphQLString},
-    MaximumY: {type: GraphQLString},
-    StartDate: {type: GraphQLString},
-    StartTime: {type: GraphQLString},
-    StartExploitation: {type: GraphQLString},
-    StartOrganisation: {type: GraphQLString},
-    Communes: {
-      type: new GraphQLList(CommuneType),
-      resolve: (region) => getRegionByURL(region.Communes)
-    }
-  })
+    fields: () => ({
+        url: {
+            type: GraphQLString,
+        },
+        description: {
+            type: GraphQLString,
+        },
+        id: {
+            type: GraphQLString
+        },
+        name: {
+            type: GraphQLString
+        },
+        nameLanguageCode: {
+            type: GraphQLString
+        },
+        centerX: {
+            type: GraphQLString
+        },
+        centerY: {
+            type: GraphQLString
+        },
+        minimumX: {
+            type: GraphQLString
+        },
+        minimumY: {
+            type: GraphQLString
+        },
+        maximumX: {
+            type: GraphQLString
+        },
+        maximumY: {
+            type: GraphQLString
+        },
+        startDate: {
+            type: GraphQLString
+        },
+        startTime: {
+            type: GraphQLString
+        },
+        startExploitation: {
+            type: GraphQLString
+        },
+        startOrganisation: {
+            type: GraphQLString
+        },
+        communes: {
+            type: new GraphQLList(CommuneType),
+            resolve: (region) => getRegionByURL(region.communes)
+        }
+    })
 });
 
 const QueryType = new GraphQLObjectType({
-  name: 'Query',
-  description: '...',
+    name: 'Query',
+    description: '...',
 
-  fields: () => ({
-    region: {
-      type: RegionType,
-      args: {
-        id: {type: GraphQLString}
-      },
-      resolve: (root, args) => getRegionByURL(`/regions/${args.id}/`)
-    }
-  })
+    fields: () => ({
+        region: {
+            type: RegionType,
+            args: {
+                id: {
+                    type: GraphQLString
+                }
+            },
+            resolve: (root, args) => getRegionByURL(`/regions/${args.id}/`)
+        }
+    })
 });
 
 export default new GraphQLSchema({
-  query: QueryType
+    query: QueryType
 })
