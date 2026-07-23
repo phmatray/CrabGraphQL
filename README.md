@@ -2,6 +2,23 @@
 
 # CrabGraphQL
 
+<!-- portfolio-toc:start -->
+
+## Table of Contents
+
+- [The Problem](#the-problem)
+- [The Solution](#the-solution)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+
+<!-- portfolio-toc:end -->
+
+
 > **A GraphQL endpoint that wraps a REST API for Belgian regions and communes ("Crab") behind a typed `Region` / `Commune` schema.**
 
 <!-- Row 1 — Identity -->
