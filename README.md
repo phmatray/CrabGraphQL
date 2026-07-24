@@ -2,6 +2,21 @@
 
 # CrabGraphQL
 
+<!-- portfolio-badges:start -->
+<!-- Identity -->
+[![phmatray - CrabGraphQL](https://img.shields.io/static/v1?label=phmatray&message=CrabGraphQL&color=blue&logo=github)](https://github.com/phmatray/CrabGraphQL)
+![Top language](https://img.shields.io/github/languages/top/phmatray/CrabGraphQL)
+[![Stars](https://img.shields.io/github/stars/phmatray/CrabGraphQL?style=social)](https://github.com/phmatray/CrabGraphQL/stargazers)
+[![Forks](https://img.shields.io/github/forks/phmatray/CrabGraphQL?style=social)](https://github.com/phmatray/CrabGraphQL/network/members)
+[![License](https://img.shields.io/github/license/phmatray/CrabGraphQL)](https://github.com/phmatray/CrabGraphQL/blob/HEAD/LICENSE)
+
+<!-- Activity -->
+[![Issues](https://img.shields.io/github/issues/phmatray/CrabGraphQL)](https://github.com/phmatray/CrabGraphQL/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/phmatray/CrabGraphQL)](https://github.com/phmatray/CrabGraphQL/pulls)
+[![Last commit](https://img.shields.io/github/last-commit/phmatray/CrabGraphQL)](https://github.com/phmatray/CrabGraphQL/commits)
+<!-- portfolio-badges:end -->
+
+
 <!-- portfolio-toc:start -->
 
 ## Table of Contents
